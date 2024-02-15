@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-3">
+  <h1>ข้อมูลเครื่องมือช่างแบบตาราง</h1>
+  <table class="table  table-bordered my-5 ">
+    <thead>
+      <tr class="table-primary">
+        <th>ลําดับ</th>
+        <th>ชื่อ</th>
+        <th>ชื่อ อังกฤษ</th>
+        <th>ใช้สำหรับ</th>
+        <th>เบิกใช้เมื่อ</th>
+        <th>รหัสเครื่องมือ</th>
+        <th>ชั้นที่เก็บ</th>
+        <th>อายุการใช้งาน</th>
+        <th>ราคา</th>
+        <th>รูป</th>
+      </tr>
+      </thead>
+     <tbody>
+      {% for  i in person %}
+     <tr>
+      <td>{{i.P_id}}</td>
+      <td>{{i.p_firstname}}</td>
+      <td>{{i.p_lastname}}</td>
+      <td>{{i.p_position}}</td>
+      <td>{{i.p_work}}</td>
+      <td>{{i.p_local}}</td>
+      <td>{{i.p_contract}}</td>
+      <td>{{i.p_salary}}</td>
+      <td>{{i.p_number}}</td>
+      <td><img src ="{{i.p_picture.url}}"width="100"></td>
+     </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
